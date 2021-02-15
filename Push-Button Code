@@ -1,0 +1,25 @@
+int BUTTON = 2;
+int LED = 3;
+int BUTTONstate=0;
+
+void setup()
+{
+ pinMode(2,INPUT);
+ pinMode(3,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  BUTTONstate=digitalRead(2);
+  if(BUTTONstate==HIGH)
+  {
+    digitalWrite(3,LOW);
+    Serial.println("Led OFF");
+  }
+  else{
+  digitalWrite(3,HIGH);
+    Serial.println("Led ON");
+  }
+}
+ 
